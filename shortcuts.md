@@ -1,0 +1,1 @@
+ctrl D for selecting multiple word at a time
