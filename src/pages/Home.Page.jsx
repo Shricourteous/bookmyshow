@@ -13,16 +13,31 @@ const HomePage = () => {
   const [onlineStreamEvents, setOnlineStreamEvents] = useState([]);
 
   useEffect(()=>{
+    const requestPopularMovies = async()=>{
+      const getPopularMovies = await axios.get('/movie/popular');
+      setRecomenderMovies(getPopularMovies.data.results)
+    }
+    requestPopularMovies();
+  },[])
+
+  useEffect(()=>{
     const requestTopRatedMovies = async()=>{
-      const getTopRatedMovies = await axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=978ecb4a250a51b7a9824e81907d6bc1');
-      setRecomenderMovies(getTopRatedMovies.data.results)
+      const getTopRatedMovies = await axios.get('/movie/top_rated');
+      setPremierMovies(getTopRatedMovies.data.results)
     }
     requestTopRatedMovies();
   },[])
 
+  useEffect(()=>{
+    const requestUpcommingMovies = async()=>{
+      const getUpcommingMovies = await axios.get('/movie/upcoming');
+      setOnlineStreamEvents(getUpcommingMovies.data.results)
+    }
+    requestUpcommingMovies();
+  },[])
 
   return (
-    <>
+    <> 
     <HeroCarousel/>
     <div className='container mx-auto px-4 md:px-12 my-8'>
       <h1 className='text-2xl font-bold text-gray-800 sm:ml-0 my-3'>
@@ -58,7 +73,7 @@ const HomePage = () => {
           title="Online Streaming event"
           subtitle = ""
           posters = {onlineStreamEvents}
-          isDark = {true}
+          isDark = {false}
         />
     </div>
 
