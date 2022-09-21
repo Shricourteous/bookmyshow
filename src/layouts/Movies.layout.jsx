@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import MovieNavbar from '../components/Navbar/MovieNavbar.Component'
+
 
 const MoviesLayoutHOC = (Component)=>({...props}) => {
   return (

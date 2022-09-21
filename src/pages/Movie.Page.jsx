@@ -1,7 +1,7 @@
 import React from 'react'
 import MoviesLayoutHOC from '../layouts/Movies.layout';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect,useContext } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { MovieContext } from '../context/Movie.Context';
@@ -10,12 +10,11 @@ import {FaCcVisa, FaApplePay} from 'react-icons/fa'
 import PosterSlider from '../components/PosterSlider/PosterSlider.Component';
 
 const MoviePage = () => {
-  const {movie} = useState(MovieContext);
-
   const {id} = useParams();
   const [cast, setCast] = useState([]);
   const [similarMovies, setSimlarMovies] = useState([]);
   const [recommenderMovies, setRecommendedMovies] = useState([]);
+  const {movie, setMovie} = useContext(MovieContext);
 
   useEffect(()=>{
     const requestCast = async ()=>{
@@ -41,19 +40,36 @@ const MoviePage = () => {
     requestRecommendedMovies();
   },[id]);
 
+
+  useEffect(() => {
+    const requestMovie = async() =>{
+      const getMovieData = await axios.get(`movie/${id}`);
+      setMovie(getMovieData.data);
+
+    }
+    requestMovie();
+  }, [id])
+  
+
+
+
+
   const settingCast = {};
 
-  const settings = {}
+  const settings = {
+
+    
+  }
 
 
   return (
     <>
-    <div className='my-12 container px-4 lg:ml-20 lg:w-2/1'>
+    <div className='my-12 container px-4 lg:ml-20 lg:w-2/3'>
       <div className='flex flex-col item-start gap-3'>
         <h1 className='text-gray-800 font-bold text-2xl'>
           About the movie
         </h1>
-        {/* <p>{movie.overview}</p> */}
+        <p>{movie.overview}</p>
       </div>
       <div className='my-8'>
         <hr />
@@ -125,7 +141,7 @@ const MoviePage = () => {
 
     </div>
     </>
-  )
+  ) 
 }
 
 export default MoviesLayoutHOC (MoviePage);
