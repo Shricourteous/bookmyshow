@@ -8,6 +8,7 @@ import { MovieContext } from '../context/Movie.Context';
 import Slider from 'react-slick';
 import {FaCcVisa, FaApplePay} from 'react-icons/fa'
 import PosterSlider from '../components/PosterSlider/PosterSlider.Component';
+import MovieHero from '../components/MovieHero/MovieHero.Component';
 
 const MoviePage = () => {
   const {id} = useParams();
@@ -57,13 +58,38 @@ const MoviePage = () => {
   const settingCast = {};
 
   const settings = {
-
-    
+    infinte:false,
+    speed:500,
+    slideToShow:4,
+    slideToScroll:3,
+    initialSlide:0,
+    response: [{
+      breakpoint:1024,
+      settings:{
+        slideToShow:3,
+        slideToScroll:2,
+      }
+    },
+    {
+      breakpoint:600,
+      settings:{
+        slideToShow:2,
+        slideToScroll:2,
+      },
+    },
+      {
+        breakpoint:480,
+        settings:{
+          slideToShow:2,
+          slideToScroll:1,
+        }
+      }
+  ]
   }
-
-
   return (
     <>
+
+    <MovieHero/>
     <div className='my-12 container px-4 lg:ml-20 lg:w-2/3'>
       <div className='flex flex-col item-start gap-3'>
         <h1 className='text-gray-800 font-bold text-2xl'>
