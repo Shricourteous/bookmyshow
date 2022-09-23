@@ -209,5 +209,5 @@ const MoviePage = () => {
     </>
   ) 
 }
-
+// Movie Page Export
 export default MoviesLayoutHOC (MoviePage);
