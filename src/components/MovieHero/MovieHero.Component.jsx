@@ -43,7 +43,7 @@ const MovieHero = () => {
           </div>
         </div>
         <div>
-          <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="Backdrop Poster" className='w-full h-full object-cover object-center' />
+          <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="Backdrop Poster" className='w-full h-full object-cover object-center' style={{height:"30rem"}} />
         </div>
       </div>
     </>
