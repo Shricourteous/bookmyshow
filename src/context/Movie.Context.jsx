@@ -10,8 +10,22 @@ const MovieProvider = ({children}) => {
         backdrop_path: "",
         poster_path:"",
     });
+    const [isOpen , setIsOpen] = useState(false)
+    const [price , setPrice] = useState(false)
+
+
+    const rentMovie = ()=>{
+        setIsOpen(true)
+        setPrice(149)
+    }
+
+    const buyMovie = ()=>{
+        setIsOpen(true);
+        setPrice(449)
+    }
     return (
-    <MovieContext.Provider value={{movie, setMovie}}>
+        // sending values to MovieContext Provider
+    <MovieContext.Provider value={{movie, setMovie,setIsOpen, isOpen, price, setPrice, rentMovie, buyMovie}}>
         {children}
     </MovieContext.Provider>
   )
