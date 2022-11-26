@@ -10,7 +10,7 @@ const PaymentModel = ({setIsOpen, isOpen, price}) => {
   // Public Key NEeds to Be added
   const launchRazorPay = ()=>{
     let options = {
-      key: "rzp_test_75QtgQgbBK6mWh",
+      key: "rzp_test_QfeAwz8Xv9bKuH",
       amount : price * 100,
       currency : "INR",
       description : "Movie purchase or rental",

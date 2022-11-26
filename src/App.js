@@ -7,7 +7,7 @@ import axios from 'axios';
 import HomePage from "./pages/Home.Page.jsx";
 import MoviesPage from "./pages/Movie.Page"
 import PlayPage from "./pages/Play.Page"
-// slick css for sliding effectsz
+// slick css for sliding effects
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
