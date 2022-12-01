@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -25,7 +21,32 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## This project is build on React
+
+## Slider :
+### React-Slick is used to give  a cool sliding effects.
+
+## API used in project
+### Tmdb is used to fetch the details about the movies and picture of it.
+
+## Payment
+
+### The movie can get in two ways: 
+
+### By Rent methode
+
+### By Buy method
+
+## Payment Mode 
+
+### All debit cards, credit cards , net Banking can be done
+## Payment Gateway Used
+
+### Razorpay in Testing mode
+
+## The Folling commands can be usefull to install the required packages
+
+The app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
@@ -68,3 +89,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
